@@ -1,0 +1,43 @@
+.nav__container {
+  display: flex;
+  padding: 0 24px;
+  max-width: 700px;
+  height: 80px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  position: fixed;
+  z-index: 10;
+  color: #000;
+  top: -80px;
+  opacity: -1;
+  transition: 0.5s;
+}
+
+.visible {
+  top: 0px;
+  opacity: 1;
+}
+
+a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.active {
+  color: #36bec3;
+}
+
+@media (max-width: 700px) {
+  .nav__container {
+    display: none;
+  }
+}

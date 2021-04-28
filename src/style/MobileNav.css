@@ -1,0 +1,28 @@
+.mobileNav {
+  background-color: rgba(87, 39, 20, 0.7);
+  background-image: linear-gradient(
+    5deg,
+    rgba(243, 82, 18, 0.747) 0%,
+    rgba(35, 26, 165, 0.74) 89%
+  );
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  align-items: center;
+  display: none;
+}
+
+.mobileNav__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 100vw;
+}
+
+@media (max-width: 700px) {
+  .mobileNavActive {
+    display: flex;
+  }
+}

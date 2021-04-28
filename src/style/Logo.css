@@ -1,0 +1,35 @@
+.logo__container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.logo__top {
+  margin-bottom: 10px;
+}
+.simple__header {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .logo__top,
+  .logo__bottom {
+    display: none;
+  }
+  .simple__header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .simple__header > h1 {
+    font-size: 2.5rem;
+  }
+  .simple__header > h2 {
+    font-size: 1.25rem;
+  }
+  .logo__container {
+    margin-bottom: 30px;
+  }
+}

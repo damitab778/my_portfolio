@@ -1,0 +1,61 @@
+.home {
+  height: 100vh;
+  background: #161415 url(../img/bolt.jpg) no-repeat top center;
+  background-size: cover !important;
+  overflow: hidden;
+  min-height: 500px;
+  color: white;
+  transition: 0.9s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.home__introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  width: 50%;
+  min-width: 600px;
+  height: 500px;
+}
+
+.home__introduction > a {
+  height: 40px;
+}
+
+.social__media {
+  display: flex;
+  min-width: 350px;
+  justify-content: space-between;
+  color: white;
+}
+.social__media a {
+  transition: 0.3s;
+}
+.arrow a {
+  transition: 0.3s;
+}
+.arrow {
+  color: white;
+}
+
+.arrow a:hover,
+.social__media a:hover {
+  color: #36bec3;
+}
+
+@media (max-width: 700px) {
+  .home__introduction {
+    min-width: 0;
+    width: 100%;
+  }
+  .social__media {
+    min-width: 0;
+    max-width: 350px;
+    width: 70%;
+  }
+}
