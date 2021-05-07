@@ -1,15 +1,15 @@
 .home {
   height: 100vh;
-  background: #161415 url(../img/bolt.jpg) no-repeat top center;
+  background: url(../img/bolt.jpg) no-repeat top center;
   background-size: cover !important;
   overflow: hidden;
   min-height: 500px;
   color: white;
-  transition: 0.9s;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  transition: 0.5s;
 }
 
 .home__introduction {
@@ -33,10 +33,14 @@
   justify-content: space-between;
   color: white;
 }
-.social__media a {
+.social__media > a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
   transition: 0.3s;
 }
-.arrow a {
+.arrow > a {
+  cursor: pointer;
   transition: 0.3s;
 }
 .arrow {
@@ -44,18 +48,28 @@
 }
 
 .arrow a:hover,
-.social__media a:hover {
+.social__media a:hover,
+.arrow a:focus,
+.social__media a:focus {
   color: #36bec3;
 }
 
 @media (max-width: 700px) {
+  .home {
+    background: url(../img/bolt.jpg) no-repeat 84%;
+  }
   .home__introduction {
     min-width: 0;
     width: 100%;
+    opacity: 1;
+    transition: 0.2s;
   }
   .social__media {
     min-width: 0;
     max-width: 350px;
     width: 70%;
+  }
+  .home__introduction--disable {
+    opacity: 0;
   }
 }

@@ -8,10 +8,10 @@ function MobileNav() {
   const dispatch = useDispatch();
   let navClass = "mobileNav";
   if (mobilePopUpIsVisible) {
-    navClass += " mobileNavActive";
+    navClass += " mobileNav--active";
   }
   return (
-    <div className={navClass}>
+    <div className={navClass} onClick={() => dispatch(setVisible())}>
       <div className="mobileNav__content">
         <Link
           activeClass="active"
@@ -37,14 +37,14 @@ function MobileNav() {
         </Link>
         <Link
           activeClass="active"
-          to="resume"
+          to="skills"
           spy={true}
           smooth={true}
           offset={0}
           duration={500}
           onClick={() => dispatch(setVisible())}
         >
-          Resume
+          Skills
         </Link>
 
         <Link

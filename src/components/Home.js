@@ -12,7 +12,10 @@ import { useSelector } from "react-redux";
 import { isVisible } from "../features/mobile/mobileSlice";
 function Home() {
   const mobilePopUpIsVisible = useSelector(isVisible);
-
+  let navClass = "home__introduction";
+  if (mobilePopUpIsVisible) {
+    navClass += " home__introduction--disable";
+  }
   return (
     <div className="home" id="home">
       <Nav />
@@ -20,7 +23,7 @@ function Home() {
       <MobileButton />
 
       <IconContext.Provider value={{ size: "40px" }}>
-        <div className="home__introduction">
+        <div className={navClass}>
           <Logo />
           <div className="social__media">
             <a
@@ -52,7 +55,7 @@ function Home() {
             to="about"
             spy={true}
             smooth={true}
-            offset={-80}
+            offset={0}
             duration={500}
           >
             <FiArrowDownCircle />

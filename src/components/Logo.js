@@ -20,7 +20,7 @@ function Logo() {
       easing: "easeInOutSine",
       duration: 1500,
       delay: function (el, i) {
-        return i * 78;
+        return i * 40;
       },
       direction: "alternate",
       loop: false,
@@ -394,7 +394,6 @@ function Logo() {
       </div>
       <div className="simple__header">
         <h1>Damian Tabaka</h1>
-        <h2>Responsive Design, HTML, CSS, REACT.JS</h2>
       </div>
     </div>
   );
