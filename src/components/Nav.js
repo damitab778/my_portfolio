@@ -15,8 +15,8 @@ function Header() {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
       setVisible(() => {
-        if (currentScrollPos < 150 || currentScrollPos > 858) {
-          if (currentScrollPos > 858) {
+        if (currentScrollPos < 150 || currentScrollPos > 778) {
+          if (currentScrollPos > 778) {
             return { visible: true, color: "notransparent" };
           } else {
             return { visible: true, color: "transparent" };
@@ -47,7 +47,7 @@ function Header() {
           to="home"
           spy={true}
           smooth={true}
-          offset={0}
+          offset={-80}
           duration={500}
         >
           Home
@@ -57,7 +57,7 @@ function Header() {
           to="about"
           spy={true}
           smooth={true}
-          offset={0}
+          offset={-80}
           duration={500}
         >
           About
@@ -67,7 +67,7 @@ function Header() {
           to="skills"
           spy={true}
           smooth={true}
-          offset={0}
+          offset={-80}
           duration={500}
         >
           Skills
@@ -78,7 +78,7 @@ function Header() {
           to="projects"
           spy={true}
           smooth={true}
-          offset={0}
+          offset={-80}
           duration={500}
         >
           Projects
@@ -91,7 +91,7 @@ function Header() {
           offset={0}
           duration={500}
         >
-          Contact
+          Hire me
         </Link>
       </div>
     </div>

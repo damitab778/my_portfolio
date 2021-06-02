@@ -9,9 +9,9 @@ function Logo() {
       easing: "easeInOutSine",
       duration: 1500,
       delay: function (el, i) {
-        return i * 80;
+        return i * 60;
       },
-      direction: "alternate",
+      direction: "normal",
       loop: false,
     });
     anime({
@@ -22,7 +22,7 @@ function Logo() {
       delay: function (el, i) {
         return i * 40;
       },
-      direction: "alternate",
+      direction: "normal",
       loop: false,
     });
   }, []);

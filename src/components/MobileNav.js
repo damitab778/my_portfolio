@@ -67,7 +67,7 @@ function MobileNav() {
           duration={500}
           onClick={() => dispatch(setVisible())}
         >
-          Contact
+          Hire me
         </Link>
       </div>
     </div>

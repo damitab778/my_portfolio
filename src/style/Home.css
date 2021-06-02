@@ -39,19 +39,57 @@
   cursor: pointer;
   transition: 0.3s;
 }
-.arrow > a {
-  cursor: pointer;
-  transition: 0.3s;
-}
+
 .arrow {
+  cursor: pointer;
   color: white;
 }
 
-.arrow a:hover,
+.arrow:hover,
+.arrow:focus-within {
+  color: #36bec3;
+}
+
+.arrow > a {
+  transition: 0.3s;
+}
+
 .social__media a:hover,
-.arrow a:focus,
 .social__media a:focus {
   color: #36bec3;
+  animation: shake 0.1s 2;
+}
+
+.circle {
+  position: relative;
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.circle:hover {
+  border-color: #36bec3;
+}
+
+.bird {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-name: drop;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 1.2s;
+}
+
+.two {
+  top: 12px;
+}
+
+.third {
+  top: -12px;
 }
 
 @media (max-width: 700px) {
@@ -71,5 +109,26 @@
   }
   .home__introduction--disable {
     opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+  100% {
+    transform: rotate(-14deg);
+  }
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(40px);
   }
 }

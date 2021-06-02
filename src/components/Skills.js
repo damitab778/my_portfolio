@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "../style/Skills.css";
-import Aos from "aos";
-import "aos/dist/aos.css";
 import {
   SiJavascript,
   SiReact,
@@ -14,13 +12,48 @@ import {
   SiGithub,
   SiMysql,
 } from "react-icons/si";
-
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CSSRulePlugin } from "gsap/CSSRulePlugin";
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(CSSRulePlugin);
 function Skills() {
   useEffect(() => {
-    Aos.init({
-      duration: 2000,
-      delay: 200,
-      offset: -600,
+    const [skills, elements] = wrapper.current.children;
+    const barSpan = elements.querySelectorAll(".bar__span");
+    const header = skills.querySelector(".skills__header");
+    gsap.fromTo(
+      header,
+      { x: "-=400", opacity: 0 },
+      {
+        duration: 3,
+        opacity: 1,
+        delay: 0.2,
+        x: "+=400",
+        scrollTrigger: {
+          trigger: barSpan,
+          start: "top 50%",
+        },
+        ease: "elastic",
+      }
+    );
+
+    barSpan.forEach((curr) => {
+      gsap.fromTo(
+        curr,
+        { x: "-=1200", backgroundColor: "white" },
+        {
+          duration: 2,
+          delay: 0.1,
+          x: "+=1200",
+          backgroundColor: "#36BEC3",
+          scrollTrigger: {
+            trigger: barSpan,
+            start: "top 50%",
+          },
+          ease: "stepped",
+        }
+      );
     });
   }, []);
   let skillTab = [
@@ -30,49 +63,51 @@ function Skills() {
       icon: <SiJavascript />,
       color: "#EFD81D",
     },
-    { name: "React.js", lvl: "80%", icon: <SiReact />, color: "#57D2F3" },
+    { name: "React.js", lvl: "80%", icon: <SiReact />, color: "white" },
     {
       name: "TypeScript",
-      lvl: "70%",
+      lvl: "65%",
       icon: <SiTypescript />,
       color: "#2F74C0",
     },
     { name: "Redux", lvl: "80%", icon: <SiRedux />, color: "#7248B6" },
-    { name: "Node.js", lvl: "60%", icon: <SiNodeDotJs />, color: "#7FC728" },
+    { name: "Node.js", lvl: "55%", icon: <SiNodeDotJs />, color: "#7FC728" },
     { name: "CSS", lvl: "90%", icon: <SiCss3 />, color: "#254BDD" },
-    { name: "SASS", lvl: "70%", icon: <SiSass />, color: "#C76494" },
+    { name: "SASS", lvl: "65%", icon: <SiSass />, color: "#C76494" },
     { name: "HTML5", lvl: "70%", icon: <SiHtml5 />, color: "#E44D26" },
     { name: "Git", lvl: "50%", icon: <SiGithub />, color: "#E94E31" },
-    { name: "SQL", lvl: "80%", icon: <SiMysql />, color: "#005E86" },
+    { name: "SQL", lvl: "70%", icon: <SiMysql />, color: "#005E86" },
   ];
+
+  const wrapper = useRef(null);
 
   const skillBars = skillTab.map((current, id) => {
     return (
       <div className="skill" key={id}>
-        <p>
-          <span style={{ color: current.color }}>{current.icon}</span>
-          {current.name}
-        </p>
-
         <div className="bar__div">
-          <span
-            className="bar__span"
-            data-aos="fade-right"
-            data-aos-anchor-placement="bottom-bottom"
-            style={{ width: current.lvl }}
-          ></span>
+          <span className="bar__span" style={{ width: current.lvl }}>
+            <p className="bar__span__paragraph">
+              <span style={{ color: current.color }}>{current.icon}</span>
+              {current.name}
+            </p>
+          </span>
         </div>
       </div>
     );
   });
   return (
-    <div className="skills" id="skills">
+    <div className="skills" id="skills" ref={wrapper}>
       <div className="skills__wrapper">
-        <h1> Here you can check my skills</h1>
-        {skillBars}
+        <h1 className="skills__header">Skills</h1>
       </div>
+      <div className="skills__bar__wrapper">{skillBars}</div>
     </div>
   );
 }
 
 export default Skills;
+/*
+
+
+
+*/

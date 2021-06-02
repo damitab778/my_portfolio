@@ -5,8 +5,8 @@ import Logo from "./Logo";
 import MobileButton from "./MobileButton";
 import MobileNav from "./MobileNav";
 import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { FiArrowDownCircle } from "react-icons/fi";
 import { IconContext } from "react-icons";
+import { RiArrowDownSLine } from "react-icons/ri";
 import { Link } from "react-scroll";
 import { useSelector } from "react-redux";
 import { isVisible } from "../features/mobile/mobileSlice";
@@ -58,7 +58,11 @@ function Home() {
             offset={0}
             duration={500}
           >
-            <FiArrowDownCircle />
+            <div className="circle">
+              <RiArrowDownSLine className="bird one" />
+              <RiArrowDownSLine className="bird two" />
+              <RiArrowDownSLine className="bird third" />
+            </div>
           </Link>
         </div>
       </IconContext.Provider>

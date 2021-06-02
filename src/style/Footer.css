@@ -1,0 +1,16 @@
+.footer {
+  height: 87px;
+  background-color: #0e0e0e;
+  width: 100%;
+}
+
+.footer__header {
+  width: 100%;
+  text-align: center;
+  line-height: 87px;
+  opacity: 0.8;
+}
+
+.footer__span {
+  color: #71d1d4;
+}

@@ -1,0 +1,116 @@
+.card {
+  color: white;
+  background-size: cover;
+  background-position: center;
+  padding: 10rem 0 0;
+  width: 100%;
+  max-width: 40ch;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  transition: transform 300ms ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: scale(1.05);
+}
+
+.card-content {
+  --padding: 1.5rem;
+  padding: var(--padding);
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1));
+}
+
+.card:hover .card-content > *,
+.card:focus-within .card-content > * {
+  opacity: 1;
+  transition-delay: 600ms;
+}
+
+.card:hover .card-title::after,
+.card:focus-within .card-title::after {
+  transform: scaleX(1);
+}
+.card-title {
+  position: relative;
+  width: max-content;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  left: calc(var(--padding) * -1);
+  bottom: 0;
+  width: calc(100% + var(--padding));
+  background: #36bec3;
+
+  transform-origin: left;
+  transition: transform 300ms ease;
+}
+
+.card-body {
+  color: rgb(255 255 255 / 0.9);
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: #36bec3;
+  background-color: white;
+  padding: 0.5em 1.25em;
+  border-radius: 0.4rem;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.button:hover,
+.button:focus {
+  color: white;
+  background-color: #36bec3;
+}
+@media (hover) {
+  .card-content {
+    transform: translateY(56%);
+    transition: transform 300ms ease;
+  }
+  .card-content > *:not(.card-title) {
+    opacity: 0;
+    transition: opacity 300ms linear;
+  }
+  .card:hover .card-content,
+  .card:focus-within .card-content {
+    transform: translateY(0);
+    transition-delay: 300ms;
+  }
+
+  .card:focus-within .card-content {
+    transition-duration: 0ms;
+  }
+
+  .card-title::after {
+    transform: scaleX(0);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .card {
+    max-width: 25ch;
+    padding: 0;
+  }
+
+  .card-title {
+    width: 100%;
+  }
+
+  .card-content {
+    height: 100%;
+    width: 100%;
+    padding: var(--padding);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+  }
+}
