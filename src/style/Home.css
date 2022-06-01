@@ -62,16 +62,11 @@
 
 .circle {
   position: relative;
-  border: 2px solid white;
   border-radius: 50%;
   height: 45px;
   width: 45px;
   overflow: hidden;
   transition: border-color 0.3s;
-}
-
-.circle:hover {
-  border-color: #36bec3;
 }
 
 .bird {

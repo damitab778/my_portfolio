@@ -114,3 +114,10 @@
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
   }
 }
+
+@media screen and (min-width: 650px) and (max-width: 950px) {
+  .card {
+    max-width: 35ch;
+    padding: 0;
+  }
+}

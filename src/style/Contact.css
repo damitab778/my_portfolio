@@ -14,8 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 600px !important;
-  width: 100%;
+  width: 80% !important;
   height: 80%;
 }
 
@@ -159,5 +158,8 @@
   }
   .submit__button {
     width: 100%;
+  }
+  .form__wrapper {
+    width: 100% !important;
   }
 }

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "../style/Projects.css";
 import Project from "./Project";
-import amazone from "../img/amazone.png";
 import spotify from "../img/spotify.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -32,16 +31,10 @@ function Projects() {
   });
   const projectsTab = [
     {
-      img: amazone,
-      title: "Amazone Clone",
-      description: "Simple clone",
-      link: "https://damitab778.github.io/amazone-clone/",
-      from: "fade-down-right",
-    },
-    {
       img: spotify,
       title: "Spotify Clone",
-      description: "Simple clone",
+      description:
+        "Simple clone - a premium account and the path to the playlist required",
       link: "https://damitab778.github.io/Spotify-clone/",
       from: "fade-up-left",
     },

@@ -58,7 +58,7 @@ function About() {
 
             <p className="resume__btn">
               <a
-                href="https://drive.google.com/file/d/1TBqgvum2DYgqPN6ITvWumpiNK9F2aOO2/view?usp=sharing"
+                href="https://drive.google.com/file/d/1wsVAa91a_WUnR_yQX_2ltjKxWXraWeru/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
               >
