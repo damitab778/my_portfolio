@@ -23,7 +23,6 @@ function Project({
       className={img ? "card" : "card card--no-image"}
       style={img ? { backgroundImage: "url(" + img + ")" } : undefined}
       data-aos={from}
-      data-aos-anchor-placement="top-center"
       data-aos-offset="0"
       data-aos-delay="400"
       data-aos-once="true"

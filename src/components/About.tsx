@@ -26,11 +26,7 @@ function About() {
   }, []);
   return (
     <div className="about" id="about" ref={sectionRef}>
-      <div
-        data-aos="fade-right"
-        data-aos-anchor-placement="center-bottom"
-        className="about__wrapper"
-      >
+      <div data-aos="fade-right" className="about__wrapper">
         <img src={me} alt="Damian Tabaka" />
         <div className="description">
           <div className="top">
@@ -55,15 +51,14 @@ function About() {
             </div>
             <p>
               I started my career as a Frontend Developer and, over 5 years,
-              have also grown into an experienced QA Automation Engineer —
+              have also grown into an experienced QA Automation Engineer -
               combining performant, data-driven UIs in React and Next.js with
               reliable E2E test automation using Cypress and Playwright.
             </p>
             <p>
-              I specialize in data visualizations, test architecture
-              refactoring with the Page Object Model, and reducing flaky
-              tests at scale — bridging frontend development and quality
-              engineering.
+              I specialize in data visualizations, test architecture refactoring
+              with the Page Object Model, and reducing flaky tests at scale -
+              bridging frontend development and quality engineering.
             </p>
           </div>
           <div className="bottom">
