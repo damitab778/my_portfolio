@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import "../style/Home.css";
 import Nav from "./Nav";
 import Logo from "./Logo";
@@ -8,19 +8,22 @@ import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { Link } from "react-scroll";
-import { useSelector } from "react-redux";
-import { isVisible } from "../features/mobile/mobileSlice";
+import { useSectionInView } from "../hooks/useSectionInView";
+
 function Home() {
-  const mobilePopUpIsVisible = useSelector(isVisible);
+  const [mobileNavVisible, setMobileNavVisible] = useState(false);
+  const sectionRef = useSectionInView("home");
   let navClass = "home__introduction";
-  if (mobilePopUpIsVisible) {
+  if (mobileNavVisible) {
     navClass += " home__introduction--disable";
   }
   return (
-    <div className="home" id="home">
+    <div className="home" id="home" ref={sectionRef}>
       <Nav />
-      {mobilePopUpIsVisible && <MobileNav />}
-      <MobileButton />
+      {mobileNavVisible && (
+        <MobileNav onClose={() => setMobileNavVisible(false)} />
+      )}
+      <MobileButton onToggle={() => setMobileNavVisible((prev) => !prev)} />
 
       <IconContext.Provider value={{ size: "40px" }}>
         <div className={navClass}>

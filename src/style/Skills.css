@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
 
 .skills {
-  height: 60vh;
+  min-height: 60vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   background-color: #121212;
-  padding: 1rem;
+  padding: 3rem 1rem;
 }
 
 .skills__header {
@@ -31,7 +32,7 @@
 }
 
 .skills__bar__wrapper {
-  height: 85%;
+  height: auto;
   width: 70vw;
   max-width: 900px;
   padding: 10px;
@@ -50,13 +51,17 @@
   display: flex;
   align-items: center;
   font-size: 20px;
-  gap: 5px;
+  font-weight: 600;
+  gap: 8px;
   color: white;
+  padding-left: 0.5rem;
 }
 
-.bar__span > p > span {
-  margin-bottom: -4px;
-  padding-left: 0.5rem;
+.bar__icon {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  font-size: 16px;
 }
 .bar__div {
   display: flex;
@@ -79,7 +84,8 @@
 
 @media screen and (max-width: 700px) {
   .skills {
-    height: 80vh;
+    min-height: 80vh;
+    height: auto;
   }
   .skills__bar__wrapper {
     width: 95vw;

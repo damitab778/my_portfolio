@@ -2,9 +2,11 @@
   color: white;
   background-size: cover;
   background-position: center;
-  padding: 10rem 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   width: 100%;
-  max-width: 40ch;
+  height: 420px;
   border-radius: 0.4rem;
   overflow: hidden;
   transition: transform 300ms ease;
@@ -15,22 +17,18 @@
   transform: scale(1.05);
 }
 
+.card--no-image {
+  background-image: linear-gradient(135deg, #1a3a3c, #0e0e0e);
+}
+
 .card-content {
   --padding: 1.5rem;
+  height: 190px;
   padding: var(--padding);
+  overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1));
 }
 
-.card:hover .card-content > *,
-.card:focus-within .card-content > * {
-  opacity: 1;
-  transition-delay: 600ms;
-}
-
-.card:hover .card-title::after,
-.card:focus-within .card-title::after {
-  transform: scaleX(1);
-}
 .card-title {
   position: relative;
   width: max-content;
@@ -73,34 +71,48 @@
   color: white;
   background-color: #36bec3;
 }
+
+/* On hover-capable devices, only the title shows at rest; hovering (or
+   keyboard focus) expands the panel to reveal the description and button.
+   max-height (not the old translateY-of-auto-height trick) is what keeps
+   the collapsed state the same size on every card regardless of how long
+   its description is. */
 @media (hover) {
   .card-content {
-    transform: translateY(56%);
-    transition: transform 300ms ease;
-  }
-  .card-content > *:not(.card-title) {
-    opacity: 0;
-    transition: opacity 300ms linear;
-  }
-  .card:hover .card-content,
-  .card:focus-within .card-content {
-    transform: translateY(0);
-    transition-delay: 300ms;
+    height: auto;
+    max-height: 60px;
+    transition: max-height 300ms ease;
   }
 
+  .card-content > *:not(.card-title) {
+    opacity: 0;
+    transition: opacity 200ms linear;
+  }
+
+  .card:hover .card-content,
   .card:focus-within .card-content {
-    transition-duration: 0ms;
+    max-height: 190px;
+  }
+
+  .card:hover .card-content > *,
+  .card:focus-within .card-content > * {
+    opacity: 1;
+    transition-delay: 150ms;
   }
 
   .card-title::after {
     transform: scaleX(0);
   }
+
+  .card:hover .card-title::after,
+  .card:focus-within .card-title::after {
+    transform: scaleX(1);
+  }
 }
 
 @media screen and (max-width: 700px) {
   .card {
-    max-width: 25ch;
-    padding: 0;
+    height: 320px;
   }
 
   .card-title {
@@ -108,16 +120,14 @@
   }
 
   .card-content {
-    height: 100%;
-    width: 100%;
-    padding: var(--padding);
+    height: 160px;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
   }
-}
 
-@media screen and (min-width: 650px) and (max-width: 950px) {
-  .card {
-    max-width: 35ch;
-    padding: 0;
+  @media (hover) {
+    .card:hover .card-content,
+    .card:focus-within .card-content {
+      max-height: 160px;
+    }
   }
 }

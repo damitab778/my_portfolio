@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+
+.experience {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.experience__wrapper {
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experience__header {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 3rem;
+  position: relative;
+  padding-bottom: 2rem;
+  width: max-content;
+  margin-top: 1rem;
+  color: white;
+}
+
+.experience__header::after {
+  content: "";
+  position: absolute;
+  background-color: #71d1d4;
+  width: 100%;
+  height: 4px;
+  display: block;
+}
+
+.experience__timeline {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.experience__entry {
+  border-left: 3px solid #36bec3;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  color: white;
+}
+
+.experience__period {
+  color: #71d1d4;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.experience__role {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.experience__company {
+  font-weight: 600;
+  color: #cfcfcf;
+  margin-bottom: 0.75rem;
+}
+
+.experience__description {
+  color: #cfcfcf;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.experience__tech {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.experience__tech li {
+  background-color: rgba(54, 190, 195, 0.15);
+  border: 1px solid rgba(113, 209, 212, 0.4);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  color: #71d1d4;
+}
+
+@media screen and (max-width: 700px) {
+  .experience {
+    padding: 3rem 1rem;
+  }
+}

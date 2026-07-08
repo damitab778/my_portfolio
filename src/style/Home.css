@@ -62,29 +62,24 @@
 
 .circle {
   position: relative;
-  border-radius: 50%;
-  height: 45px;
-  width: 45px;
-  overflow: hidden;
-  transition: border-color 0.3s;
+  height: 40px;
+  width: 30px;
+  animation: chevron-bounce 1.4s ease-in-out infinite;
 }
 
 .bird {
   position: absolute;
   top: 0;
   left: 0;
-  animation-name: drop;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-duration: 1.2s;
+  font-size: 22px;
 }
 
 .two {
-  top: 12px;
+  top: 9px;
 }
 
 .third {
-  top: -12px;
+  top: 18px;
 }
 
 @media (max-width: 700px) {
@@ -119,11 +114,12 @@
   }
 }
 
-@keyframes drop {
-  0% {
-    transform: translateY(-40px);
-  }
+@keyframes chevron-bounce {
+  0%,
   100% {
-    transform: translateY(40px);
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
   }
 }

@@ -1,13 +1,28 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import "../style/Nav.css";
+import { useActiveSection } from "../context/ActiveSectionContext";
+
+interface NavVisibility {
+  visible: boolean;
+  color?: string;
+}
+
+const navItems = [
+  { to: "home", label: "Home", offset: -80 },
+  { to: "about", label: "About", offset: -80 },
+  { to: "skills", label: "Skills", offset: -80 },
+  { to: "experience", label: "Experience", offset: -80 },
+  { to: "projects", label: "Individual Projects", offset: -80 },
+];
 
 function Header() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState({
+  const [visible, setVisible] = useState<NavVisibility>({
     visible: true,
     color: "transparent",
   });
+  const { activeSection } = useActiveSection();
   let navCont = "nav__container";
   let nav = "nav";
 
@@ -42,57 +57,18 @@ function Header() {
   return (
     <div className={nav}>
       <div className={navCont}>
-        <Link
-          activeClass="active"
-          to="home"
-          spy={true}
-          smooth={true}
-          offset={-80}
-          duration={500}
-        >
-          Home
-        </Link>
-        <Link
-          activeClass="active"
-          to="about"
-          spy={true}
-          smooth={true}
-          offset={-80}
-          duration={500}
-        >
-          About
-        </Link>
-        <Link
-          activeClass="active"
-          to="skills"
-          spy={true}
-          smooth={true}
-          offset={-80}
-          duration={500}
-        >
-          Skills
-        </Link>
-
-        <Link
-          activeClass="active"
-          to="projects"
-          spy={true}
-          smooth={true}
-          offset={-80}
-          duration={500}
-        >
-          Projects
-        </Link>
-        <Link
-          activeClass="active"
-          to="con"
-          spy={true}
-          smooth={true}
-          offset={0}
-          duration={500}
-        >
-          Hire me
-        </Link>
+        {navItems.map((item) => (
+          <Link
+            key={item.to}
+            className={activeSection === item.to ? "active" : undefined}
+            to={item.to}
+            smooth={true}
+            offset={item.offset}
+            duration={500}
+          >
+            {item.label}
+          </Link>
+        ))}
       </div>
     </div>
   );
