@@ -38,7 +38,7 @@ function About() {
             <div className="role__badges">
               <a
                 className="role__badge"
-                href="/resume-frontend.pdf"
+                href={`${import.meta.env.BASE_URL}resume-frontend.pdf`}
                 download="Damian-Tabaka-Frontend-Resume.pdf"
                 title="Download Frontend Developer Resume"
               >
@@ -46,7 +46,7 @@ function About() {
               </a>
               <a
                 className="role__badge"
-                href="/resume-qa.pdf"
+                href={`${import.meta.env.BASE_URL}resume-qa.pdf`}
                 download="Damian-Tabaka-QA-Resume.pdf"
                 title="Download QA Automation Engineer Resume"
               >
