@@ -1,8 +1,6 @@
 # Damian Tabaka — Portfolio
 
-Personal portfolio site for Damian Tabaka, Frontend Developer specializing in React and E2E test automation. A single-page site with smooth-scroll navigation between Home, About, Skills, Experience, Projects, and Contact sections.
-
-Live contact form submissions are sent via [EmailJS](https://www.emailjs.com/) — no backend required.
+Personal portfolio site for Damian Tabaka, Frontend Developer specializing in React and E2E test automation. A single-page site with smooth-scroll navigation between Home, About, Skills, Experience and Projects sections.
 
 ## Tech stack
 
@@ -22,12 +20,12 @@ npm run dev       # start the dev server (http://localhost:3000)
 ## Scripts
 
 | Command           | Description                                  |
-| ------------------ | --------------------------------------------- |
-| `npm run dev`      | Start the Vite dev server                     |
-| `npm run build`    | Type-check (`tsc`) then build for production  |
-| `npm run preview`  | Preview the production build locally          |
-| `npm run lint`     | Run ESLint over the project                   |
-| `npm test`         | Run tests with Vitest                         |
+| ----------------- | -------------------------------------------- |
+| `npm run dev`     | Start the Vite dev server                    |
+| `npm run build`   | Type-check (`tsc`) then build for production |
+| `npm run preview` | Preview the production build locally         |
+| `npm run lint`    | Run ESLint over the project                  |
+| `npm test`        | Run tests with Vitest                        |
 
 ## Project structure
 
